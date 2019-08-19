@@ -17,10 +17,13 @@ const initialState = {
 export function reducer(state = initialState, action) {
   switch (action.type) {
     case API_CALL_REQUEST:
-      // loading
+      //test
+      console.log('re', 'request');
       return { ...state, fetching: true, error: null };
     case API_CALL_SUCCESS:
       // no laoding, data
+      //test
+      console.log('re', 'request done');
       return { ...state, fetching: false, dog: action.dog };
     case API_CALL_FAILURE:
       // err

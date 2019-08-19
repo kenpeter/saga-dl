@@ -34,13 +34,14 @@ import { watcherSaga } from "./saga";
 const sagaMiddleware = createSagaMiddleware();
 
 // dev tool
-const reduxDevTools =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+//const reduxDevTools =
+//  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
 // reducer
 let store = createStore(
   reducer,
-  compose(applyMiddleware(sagaMiddleware), reduxDevTools)
+  //compose(applyMiddleware(sagaMiddleware), reduxDevTools)
+  compose(applyMiddleware(sagaMiddleware))
 );
 
 // dog saga
