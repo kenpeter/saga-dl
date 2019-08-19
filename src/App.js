@@ -6,29 +6,15 @@ import { connect } from "react-redux";
 class App extends Component {
   render() {
     // loading, dog data, onClick, err
-    const { fetching, dog, onRequestDog, error } = this.props;
+    const { fetching, dog, onRequestDog } = this.props;
 
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={dog} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to Dog Saga</h1>
-        </header>
-
-        {dog ? (
-          <p className="App-intro">Keep clicking for new dogs</p>
-        ) : (
-          <p className="App-intro">Replace the React icon with a dog!</p>
-        )}
-
+      <div className="App"> 
         {fetching ? (
-          <button disabled>Fetching...</button>
+          <div>Fetching...</div>
         ) : (
           <button onClick={onRequestDog}>Request a Dog</button>
         )}
-
-        {error && <p style={{ color: "red" }}>Uh oh - something went wrong!</p>}
-
       </div>
     );
   }
